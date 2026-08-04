@@ -1,0 +1,181 @@
+Ruby Language Example
+
+Ruby code is designed to be readable.
+
+Python:
+print("Hello World")
+Ruby:
+puts "Hello World"
+Object-Oriented Programming
+
+Everything in Ruby is an object.
+
+Example:
+
+name = "Alice"
+
+puts name.length
+
+name is a String object.
+
+Output:
+
+5
+Ruby Classes
+
+Example:
+
+class User
+
+  def initialize(name)
+    @name = name
+  end
+
+  def hello
+    puts "Hello #{@name}"
+  end
+
+end
+
+
+user = User.new("Alice")
+user.hello
+
+Output:
+
+Hello Alice
+Ruby on Rails (Most Important)
+
+Most people know Ruby because of Ruby on Rails.
+
+Rails is a web application framework.
+
+Architecture:
+
+MVC Pattern
+
+Model
+  │
+  ▼
+Database
+
+Controller
+  │
+  ▼
+Request Logic
+
+View
+  │
+  ▼
+HTML Page
+Rails Request Flow
+
+Example:
+
+User opens:
+
+/products
+
+Flow:
+
+Browser
+
+↓
+
+Route
+
+↓
+
+Controller
+
+↓
+
+Model
+
+↓
+
+Database
+
+↓
+
+View
+
+↓
+
+HTML Response
+Rails Example
+
+Route:
+
+get "/users", to: "users#index"
+
+Controller:
+
+class UsersController < ApplicationController
+
+  def index
+    @users = User.all
+  end
+
+end
+
+Model:
+
+class User < ApplicationRecord
+
+end
+
+Rails automatically connects the model to the database.
+
+Ruby on Rails Features
+
+Rails provides:
+
+1. Database ORM
+
+Called Active Record.
+
+Instead of writing:
+
+SELECT * FROM users;
+
+you write:
+
+User.all
+2. Routing
+
+Example:
+
+get "/login", to: "sessions#new"
+3. Authentication
+
+Common libraries:
+
+Devise
+OmniAuth
+4. Migrations
+
+Database changes are managed with code.
+
+Example:
+
+rails generate migration AddEmailToUsers email:string
+
+| Language   | Popular Framework |
+| ---------- | ----------------- |
+| Ruby       | Rails             |
+| Python     | Django / FastAPI  |
+| JavaScript | Express / NestJS  |
+| PHP        | Laravel           |
+| Java       | Spring Boot       |
+| C#         | ASP.NET Core      |
+
+
+| Technology    | Main Use                |
+| ------------- | ----------------------- |
+| Ruby on Rails | Fast web applications   |
+| Django        | Python web applications |
+| Spring Boot   | Enterprise Java backend |
+| NestJS        | TypeScript backend APIs |
+| ASP.NET Core  | C# enterprise backend   |
+| Next.js       | React full-stack apps   |

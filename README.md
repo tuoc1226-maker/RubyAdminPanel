@@ -1,136 +1,146 @@
 # RubyAdminPanel
 
-A framework for creating flexible, powerful admin dashboards in Rails.
+[🇯🇵 日本語](README.md) | [🇺🇸 English](README.en.md)
+
+Railsで柔軟かつ強力な管理ダッシュボードを作成するためのフレームワーク。
 
 ![RubyAdminPanel](https://user-images.githubusercontent.com/11917/72203824-ec10f980-3468-11ea-9ac1-51cd28ff88b7.png)
 
-## What's RubyAdminPanel?
+## RubyAdminPanelとは？
 
-RubyAdminPanel is a library for Rails that generates admin dashboards. These give
-users clean interfaces that allow them to create, edit, search, and delete
-records for any model in the application. RubyAdminPanel aims to provide the best
-user experience, and doing as much work as possible for you, whilst also being
-flexible to customise.
+RubyAdminPanelは、管理ダッシュボードを生成するRailsライブラリです。これにより、
+ユーザーはアプリケーション内のあらゆるモデルのレコードを作成、編集、検索、削除できる、洗練されたインターフェースを利用できます。
+RubyAdminPanelは、最高のユーザーエクスペリエンスを提供し、可能な限り多くの作業を自動化すると同時に、
+カスタマイズの柔軟性も備えています。
 
-To accomplish these goals, RubyAdminPanel follows a few guiding principles:
+これらの目標を達成するために、RubyAdminPanelは以下のいくつかの基本原則に従っています。
 
-* Stay as close to standard Rails as possible, keeping the
-  RubyAdminPanel-specific code as small as practical,
-* Support the simplest use cases, and let the user override defaults with
-  standard tools such as plain Rails controllers and views,
-* Break up the library into core components and plugins, so each component
-  stays small and pleasant to maintain.
+* 標準のRailsにできる限り忠実であり、
 
+RubyAdminPanel固有のコードは可能な限り最小限に抑えます。
+* 最もシンプルなユースケースをサポートし、
 
-## How to use
+ユーザーが標準のRailsコントローラーやビューなどのツールを使ってデフォルト設定を上書きできるようにします。
+* ライブラリをコアコンポーネントとプラグインに分割し、
 
-RubyAdminPanel is a [Rails Engine][], but ships with everything needed to
-contribute and test new changes.
+各コンポーネントが小さく、保守しやすい状態を維持します。
 
-To maintain compatibility with multiple dependency versions, we use
-[Appraisal][].
+## 使用方法
+
+RubyAdminPanelは[Rails Engine][]ですが、
+新しい変更の貢献やテストに必要なすべてのものが同梱されています。
+
+複数の依存関係バージョンとの互換性を維持するために、
+[Appraisal][]を使用しています。
 
 [Rails Engine]: https://guides.rubyonrails.org/engines.html
 
-### Getting started
+### はじめに
 
-1. Fork the repo,
-2. Run `./bin/setup` to install the base dependencies and setup a local
-   database,
-3. Run the test suite: `bundle exec rspec && bundle exec appraisal rspec`,
-4. Make your changes,
-5. Push your fork and open a pull request.
+1. リポジトリをフォークします。
+2. `./bin/setup` を実行して、基本依存関係をインストールし、ローカルデータベースをセットアップします。
 
-A good PR will solve the smallest problem it possibly can, have good test
-coverage and (where necessary) have internationalisation support.
+3. テストスイートを実行します: `bundle exec rspec && bundle exec appraisal rspec`
+4. 変更を加えます。
+5. フォークしたリポジトリをプッシュし、プルリクエストを作成します。
 
-### Running the application locally
+優れたプルリクエストは、可能な限り小さな問題を解決し、十分なテストカバレッジを持ち、（必要に応じて）国際化に対応している必要があります。
 
-Administrate's demo application can be run like any Rails application:
+### ローカルでのアプリケーションの実行
 
-```sh
+Administrateのデモアプリケーションは、他のRailsアプリケーションと同様に実行できます。
+
+```
+sh
 bin/dev
 ```
 
-This will start the application defined in `spec/example_app`.
-You can view the `example_app` in the browser by navigating to `/admin`.
+これにより、`spec/example_app` で定義されたアプリケーションが起動します。
 
-## Repository Structure
+`/admin` にアクセスすると、ブラウザで `example_app` を表示できます。
 
-* The gem's source code lives in the `app` and `lib` subdirectories.
-* The demo app is nested within `spec/example_app`.
 
-Rails configuration files have been changed
-to recognize the app in the new location,
-so running the server or deploying to Heroku works normally.
+## リポジトリ構造
 
-## Front-end Architecture
+* gemのソースコードは`app`と`lib`サブディレクトリに格納されています。
 
-This project uses:
+* デモアプリは`spec/example_app`の中にネストされています。
+
+Railsの設定ファイルは、
+
+新しい場所にあるアプリを認識するように変更されているため、
+
+サーバーの実行やHerokuへのデプロイは正常に動作します。
+
+
+## フロントエンドアーキテクチャ
+
+このプロジェクトでは以下を使用しています。
 
 * Sass
-* [BEM]-style CSS selectors, with [namespaces]
+* [BEM] スタイルの CSS セレクタ（[namespaces] 付き）
 * Autoprefixer
-* SCSS-Lint, with [stylelint] ([configuration](stylelint-config))
-* A variety of CSS units:
-  - `em` for typographical-related elements
-  - `rem` for lengths related to components
-  - `px` for borders, text shadows, etc.
-  - `vw`/`vh` for lengths that should be relational to the viewport
+* SCSS-Lint（[stylelint] ([configuration](stylelint-config)) 付き）
+* 様々な CSS 単位：
+- `em`：タイポグラフィ関連の要素
 
-[BEM]: http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
-[namespaces]: http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/
-[stylelint]: https://stylelint.io
+- `rem`：コンポーネントの長さ
 
-## Icons
+- `px`：境界線、テキストシャドウなど
 
-We use [Feather][] for icons.
+- `vw`/`vh`：ビューポートに比例する長さ
+
+[BEM]：http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+[namespaces]：http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/
+[stylelint]： https://stylelint.io
+
+## アイコン
+
+アイコンには[Feather][]を使用しています。
+
+
 
 [Feather]: https://feathericons.com
 
-## Labels
+## ラベル
 
-Issues and PRs are split into two levels of labels, at the higher level:
+課題とプルリクエストは、上位レベルのラベルで2段階に分類されます。
 
-* `feature`: new functionality that’s not yet implemented,
-* `bug`: breakages in functionality that is implemented,
-* `maintenance`: to keep up with changes around us
+* `feature`: 未実装の新機能、
+* `bug`: 実装済みの機能における不具合、
+* `maintenance`: 周囲の変更に対応するためのメンテナンス
 
-…and then to more specific themes:
+…さらに、より具体的なテーマのラベルは以下のとおりです。
 
-* `namespacing`: models with a namespace,
-* `installing`: initial setup, first-run experience, generators,
-* `i18n`: translations and language support,
-* `views-and-styles`: how administrate looks and is interacted with,
-* `dashboards`: how administrate presents fields and displays data,
-* `search`: finding things through our models,
-* `sorting`: ordering things on dashboards,
-* `pagination`: how we handle lots of data in small chunks,
-* `security`: controlling data access through authorisation,
-* `fields`: new fields, displaying and editing data,
-* `models`: models, associations and fetching the underlying data,
-* `documentation`: how to use Administrate, examples and common usage,
-* `dependencies`: changes or issues relating to a dependency
+* `namespacing`: 名前空間を持つモデル、
+* `installing`: 初期設定、初回起動時の操作、ジェネレーター、
+* `i18n`: 翻訳と多言語サポート、
+* `views-and-styles`: administrateの外観と操作方法、
+* `dashboards`: administrateにおけるフィールドの表示方法とデータ表示方法、
+* `search`: モデルを通じた検索、
+* `sorting`: ダッシュボード上の項目の並べ替え、
+* `pagination`: 大量のデータを小さなページにどのように表示するかチャンク、
+* `security`: 認証によるデータアクセス制御、
+* `fields`: 新規フィールド、データの表示と編集、
+* `models`: モデル、関連付け、および基となるデータの取得、
+* `documentation`: Administrate の使い方、例、一般的な使用方法、
+* `dependencies`: 依存関係に関する変更点または問題
 
+## ドキュメント
 
-## Documentation
+ダッシュボードの外観、動作、およびコンテンツをカスタマイズするために、
+ドキュメントを公開しています。
 
-To customize the appearance, behavior, and contents of the dashboard,
-we publish a set docs.
+これらのガイドは、
+git リポジトリの `docs` サブディレクトリに Markdown ファイルとして保存されています。
 
-These guides are available as markdown files in the `docs` subdirectory of the
-git repository, too.
+## 貢献
 
+[CONTRIBUTING.md](/CONTRIBUTING.md) を参照してください。
 
-## Contributing
+RubyAdminPanel は、元々 Grace Youngblood によって作成され、現在は
+Nick Charlton によってメンテナンスされています。多くの改善点やバグ修正は、[オープンソースコミュニティ](https://github.com/tuoc1226-maker/RubyAdminPanel/graphs/contributors)によって提供されました。
 
-Please see [CONTRIBUTING.md](/CONTRIBUTING.md).
+## ライセンス
 
-RubyAdminPanel was originally written by Grace Youngblood and is now maintained by
-Nick Charlton. Many improvements and bugfixes were contributed by the [open
-source
-community](https://github.com/tuoc1226-maker/RubyAdminPanel/graphs/contributors).
-
-## License
-
-RubyAdminPanel is written by Aoto Nakabayashi.
+RubyAdminPanelは中林青人によって作成されました。
