@@ -91,7 +91,9 @@ Railsの設定ファイルは、
 - `vw`/`vh`：ビューポートに比例する長さ
 
 [BEM]：http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+
 [namespaces]：http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/
+
 [stylelint]： https://stylelint.io
 
 ## アイコン
