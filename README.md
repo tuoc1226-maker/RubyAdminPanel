@@ -136,13 +136,4 @@ Railsの設定ファイルは、
 これらのガイドは、
 git リポジトリの `docs` サブディレクトリに Markdown ファイルとして保存されています。
 
-## 貢献
 
-[CONTRIBUTING.md](/CONTRIBUTING.md) を参照してください。
-
-RubyAdminPanel は、元々 Grace Youngblood によって作成され、現在は
-Nick Charlton によってメンテナンスされています。多くの改善点やバグ修正は、[オープンソースコミュニティ](https://github.com/tuoc1226-maker/RubyAdminPanel/graphs/contributors)によって提供されました。
-
-## ライセンス
-
-RubyAdminPanelは中林青人によって作成されました。

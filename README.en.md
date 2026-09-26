@@ -126,15 +126,5 @@ These guides are available as markdown files in the `docs` subdirectory of the
 git repository, too.
 
 
-## Contributing
 
-Please see [CONTRIBUTING.md](/CONTRIBUTING.md).
 
-RubyAdminPanel was originally written by Grace Youngblood and is now maintained by
-Nick Charlton. Many improvements and bugfixes were contributed by the [open
-source
-community](https://github.com/tuoc1226-maker/RubyAdminPanel/graphs/contributors).
-
-## License
-
-RubyAdminPanel is written by Aoto Nakabayashi.
